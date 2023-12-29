@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+            <input type="text" name="city" id="city-input" placeholder="Enter city">
+            <button onclick="search()">search</button>
+            <p id="output"></p>
+        </body>
+        <script>
+            function search()
+            {
+                let city=document.getElementById('city-input').value;
+                let key=a3a389c63f70600297c4c2c459d9c34e
+                let api=https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}
+                fetch(api).then((data)=>data.json())then(data=>{
+                    console.log(data)
+                    console.log(data.main.temp)
+                    document.getElementById('output').innerHTML=data.main.temp;
+                }
+            }
+        </script>
+    </html>
